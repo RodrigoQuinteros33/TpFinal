@@ -8,7 +8,7 @@ public class Policia {
         this.apellido = apellido;
         this.legajo = legajo;
     }
-
+//gachagacha
     @Override
     public String toString() {
         return "Policia{" +
