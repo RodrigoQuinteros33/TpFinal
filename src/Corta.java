@@ -1,18 +1,26 @@
-public class Corta extends Arma{
+public class Corta extends Arma {
+    private final boolean esAutomatica;
 
-    private boolean esAutomatica;
-
-    public Corta(int cantMuniciones, double alcance, String marca, int calibre, String estado, boolean esAutomatica) {
-        super(cantMuniciones, alcance, marca, calibre, estado);
+    // Constructor
+    public Corta(int cantMuniciones, double alcance, String marca, int calibre, String estado, Policia policia, boolean esAutomatica) {
+        super(cantMuniciones, alcance, marca, calibre, estado, policia);
         this.esAutomatica = esAutomatica;
     }
 
-    public boolean efectividadMts(){
-        return false;
+
+    public boolean getEsAutomatica() {
+        return esAutomatica;
+    }
+
+    // Método para verificar si es efectiva a más de 200m
+    public boolean efectividadDoscientosMts() {
+        return getAlcance() > 200;
     }
 
     @Override
-    public boolean enCondicion() {
-        return false;
+    public String toString() {
+        return "Corta{" +
+                "esAutomatica=" + esAutomatica +
+                '}';
     }
 }
